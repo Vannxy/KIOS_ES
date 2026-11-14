@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kios Mbak Nisfi - Pesan & Antar</title>
+    <link rel="icon" type="image/png" href="realfavicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HALAMAN UTAMA: KATALOG PRODUK -->
+    <div id="catalog-page" class="page active">
+        <header class="app-header">
+            <div class="logo-container">
+                <img src="ikon-logo.png" alt="Ikon Kios" class="app-icon" onerror="this.style.display='none'"> 
+            </div>
+            <h1>Kios</h1>
+        </header>
+
+        <div class="catalog-body-wrapper">
+            <!-- STAGE CAROUSEL GAMBAR MURNI -->
+            <div class="carousel-stage" id="carousel-stage">
+                <!-- Gambar produk PNG dirender di sini oleh JS -->
+            </div>
+
+            <!-- INDIKATOR DOTS -->
+            <div class="carousel-dots" id="carousel-dots"></div>
+
+            <!-- AREA DETAIL & KONTROL DI BAWAH -->
+            <div class="active-product-controls" id="active-product-controls">
+                <h2 id="active-product-name">Es Teh</h2>
+                <p id="active-product-price" class="active-price">Rp 3.000</p>
+                
+                <!-- Opsi Es/Hangat aktif untuk semua menu minuman -->
+                <div id="active-temp-options" class="temperature-options" style="display: none;">
+                    <button type="button" class="temp-btn" data-temp="Es">Es</button>
+                    <button type="button" class="temp-btn" data-temp="Hangat">Hangat</button>
+                </div>
+
+                <!-- Kontrol Jumlah Pesanan -->
+                <div class="quantity-control-clean">
+                    <button type="button" id="active-btn-minus">-</button>
+                    <span id="active-quantity-val">0</span>
+                    <button type="button" id="active-btn-plus">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="catalog-footer-summary">
+            <div class="summary-info">
+                <span>Total: <strong id="main-total-price">Rp 0</strong></span>
+                <span class="item-count-badge"><span id="main-total-items">0</span> item</span>
+            </div>
+            <button id="go-to-checkout-btn" class="main-action-btn disabled" disabled>Pesan</button>
+        </div>
+    </div>
+
+    <!-- HALAMAN KEDUA: FORM PEMESANAN & CHECKOUT -->
+    <div id="checkout-page" class="page">
+        <header class="app-header">
+            <button id="back-to-catalog" class="back-btn">&#10094;</button>
+            <h1>Konfirmasi Pesanan</h1>
+        </header>
+
+        <div class="checkout-container">
+            <div class="checkout-section">
+                <h3>Ringkasan Belanja</h3>
+                <div id="checkout-items-list">
+                    <!-- Daftar item dengan tombol +/- -->
+                </div>
+                <div class="checkout-total-row">
+                    <span>Total Pembayaran:</span>
+                    <strong id="checkout-total-price">Rp 0</strong>
+                </div>
+            </div>
+
+            <div class="checkout-section">
+                <h3>Informasi Pengiriman</h3>
+                <div class="input-group">
+                    <label for="customer-name">Nama Pemesan <span class="required">*</span></label>
+                    <input type="text" id="customer-name" placeholder="Masukkan nama lengkap anda" required>
+                </div>
+                <div class="input-group">
+                    <label for="customer-address">Alamat Rumah Pemesan <span class="required">*</span></label>
+                    <textarea id="customer-address" placeholder="Masukkan alamat lengkap / patokan" rows="3" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="customer-note">Catatan (Opsional)</label>
+                    <input type="text" id="customer-note" placeholder="">
+                </div>
+            </div>
+
+            <button id="send-whatsapp-direct" class="main-action-btn disabled" disabled>Kirim Pesanan ke WhatsApp</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+  </html>
